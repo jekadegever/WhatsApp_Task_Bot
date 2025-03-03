@@ -9,8 +9,8 @@ import com.twilio.rest.api.v2010.account.Message;
 
 public class WhatsAppBot {
 
-    private static final String ACCOUNT_SID = "";
-    private static final String AUTH_TOKEN = "";
+    private static final String ACCOUNT_SID = "AC88c50ec11c0a5f00178c3eecc4b3b179";
+    private static final String AUTH_TOKEN = "ba79329a0ea5f4bd92ff32f5252f8da9";
     private String _authToken;
     private String _accountSid;
     //private static MessageSender _messageSender;
