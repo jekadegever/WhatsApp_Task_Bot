@@ -53,6 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/2000j/OneDrive/שולחן העבודה/Idea intelij projects/whatsapp-bot/src/main/java/com/ivgenyT/taskManeger/whatsAppBot/send_message",
     "last_opened_file_path": "C:/Users/2000j/OneDrive/שולחן העבודה/Idea intelij projects/linkedList and binaryTree",
@@ -64,7 +65,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -73,13 +74,18 @@
       <recent name="com.ivgenyT.taskManeger.whatsAppBot.send_message" />
     </key>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
-      </set>
-    </attachedChunks>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="WhatsApp_Task_Bot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="WhatsApp_Task_Bot" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -93,6 +99,11 @@
       <workItem from="1740661272731" duration="28738000" />
       <workItem from="1740964204586" duration="7831000" />
       <workItem from="1740997223466" duration="760000" />
+      <workItem from="1741396633636" duration="74000" />
+      <workItem from="1741396716730" duration="77000" />
+      <workItem from="1741396798856" duration="44000" />
+      <workItem from="1741396849971" duration="28000" />
+      <workItem from="1741396881750" duration="110000" />
     </task>
     <task id="LOCAL‎-00001" summary="commit master to main">
       <option name="closed" value="true" />
@@ -111,5 +122,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit master to main" />
     <option name="LAST_COMMIT_MESSAGE" value="commit master to main" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
