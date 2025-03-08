@@ -33,13 +33,6 @@
     &quot;accountId&quot;: &quot;5bf5ce5a-5af6-42c3-ac2e-b3f986f2ad1c&quot;
   }
 }</component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="jdkForImporter" value="openjdk-23" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -112,6 +105,8 @@
       <workItem from="1741397432054" duration="274000" />
       <workItem from="1741397713521" duration="899000" />
       <workItem from="1741399619917" duration="685000" />
+      <workItem from="1741400727323" duration="166000" />
+      <workItem from="1741401516104" duration="54000" />
     </task>
     <task id="LOCAL‎-00001" summary="commit master to main">
       <option name="closed" value="true" />
