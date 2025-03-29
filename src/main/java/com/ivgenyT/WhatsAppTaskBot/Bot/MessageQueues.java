@@ -11,6 +11,8 @@ private static List<MessageForm> sendMessageQueue = new ArrayList<>();
 
 
 
+//no constructor - all methods are statics
+//static methods
   public static void addToReceivedMessageQueue(MessageForm messageForm) {
     receivedMessageQueue.add(messageForm);
   }
