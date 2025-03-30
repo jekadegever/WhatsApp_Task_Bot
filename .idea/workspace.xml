@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76133803-e780-4ef4-a59e-ca1cb3f0b39e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/MessageQueues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/MessageQueues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/WhatsAppBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/WhatsAppBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Const.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageReceiver/MessageReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageReceiver/MessageReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageSender/MessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageSender/MessageSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/StorageManager/MessageForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/StorageManager/MessageForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/utilities_functions_TODO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/utilities_functions_TODO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +44,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jenyatokarzhevsky/IdeaProjects/WhatsApp_Task_Bot&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "M__Sender",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/jenyatokarzhevsky/IdeaProjects/WhatsApp_Task_Bot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -66,6 +80,7 @@
       <workItem from="1743330910105" duration="95000" />
       <workItem from="1743331012282" duration="48000" />
       <workItem from="1743331667679" duration="174000" />
+      <workItem from="1743331925026" duration="16243000" />
     </task>
     <servers />
   </component>

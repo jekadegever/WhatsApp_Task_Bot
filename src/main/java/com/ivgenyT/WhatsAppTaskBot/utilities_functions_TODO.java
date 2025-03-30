@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class utilities_functions_TODO {
-
+/*
     //todo transfer to data base package
 
     private  List<MessageData> loadMessages() {
@@ -46,4 +46,6 @@ public class utilities_functions_TODO {
 
         }
     }
+
+ */
 }

@@ -2,34 +2,53 @@
 package com.ivgenyT.WhatsAppTaskBot.Bot;
 
 import com.ivgenyT.WhatsAppTaskBot.Const;
-import com.ivgenyT.WhatsAppTaskBot.MessageSender.MessageSender;
+import com.ivgenyT.WhatsAppTaskBot.StorageManager.MessageForm;
 import com.twilio.Twilio;
-import com.twilio.rest.api.v2010.account.Message;
 
 
-public class WhatsAppBot {
+public class WhatsAppBot implements Runnable {
 
-    private static final String ACCOUNT_SID = "AC88c50ec11c0a5f00178c3eecc4b3b179";
-    private static final String AUTH_TOKEN = "ba79329a0ea5f4bd92ff32f5252f8da9";
     private String _authToken;
     private String _accountSid;
     //private static MessageSender _messageSender;
 
+
+    //constructor
     public WhatsAppBot(){
         _authToken = Const.AUTH_TOKEN;
         _accountSid = Const.ACCOUNT_SID;
     }
 
-    public Message getReceivedMessage
+    public void run(){
+
+        while (true){
+            printMessage();
+            try {
+                Thread.sleep(100); // השהייה של 500 מילישניות (חצי שניה)
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void printMessage(){
+        MessageForm message = MessageQueues.PopReceivedMessageQueue();
+        if(message != null){
+            System.out.println("\n"+message.getBody());
+        }
 
 
-    public static void start() {
+
+    }
+
+
+    public void Init() {
         // init twilio service
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Twilio.init(_accountSid, _authToken);
 
 
         //init message sender
-        _messageSender = new MessageSender();
+        //_messageSender = new MessageSender();
     }
 
 

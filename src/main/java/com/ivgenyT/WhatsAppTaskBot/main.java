@@ -1,22 +1,44 @@
 package com.ivgenyT.WhatsAppTaskBot;
 
 import com.ivgenyT.WhatsAppTaskBot.MessageReceiver.MessageReceiver;
-import com.ivgenyT.WhatsAppTaskBot.MessageSender.Contacts;
 import com.ivgenyT.WhatsAppTaskBot.Bot.WhatsAppBot;
-import java.util.concurrent.TimeUnit;
 
 public class main {
 
     public static void main(String[] args) {
-        String sendMess = " היי יבגני, אני הבוט האישי שיעזור לך לנהל את המשימות האישיות שלך! " +
-                "נוצרתי על ידי יבגני, מבקש לא לשלוח הודעות בחזרה מכיון שאני עדיין בתהליך פיתוח תודה ! :)";
+
+        WhatsAppBot bot = new WhatsAppBot();
+        bot.Init();
+        MessageReceiver receiver = new MessageReceiver();
+
+        Thread botThread = new Thread(bot);
+        Thread receiverThread = new Thread(receiver);
+
+
+
+        botThread.start();
+        receiverThread.start();
+
+
+
+
+
+
+
+
+
+
+
+
+        //String sendMess = " היי יבגני, אני הבוט האישי שיעזור לך לנהל את המשימות האישיות שלך! " +
+               // "נוצרתי על ידי יבגני, מבקש לא לשלוח הודעות בחזרה מכיון שאני עדיין בתהליך פיתוח תודה ! :)";
 
         //init contacts
         //Contacts IRina = Contacts.IRINA;
         //Contacts Ella = Contacts.ELLA;
         //Contacts Pasha = Contacts.PASHA;
         // Contacts Leasha = Contacts.Alex;
-        String ivgenyPhoneNum = Contacts.IVGENY.getNumber();
+        //String ivgenyPhoneNum = Contacts.IVGENY.getNumber();
 
 
        /* boolean run = true;
@@ -68,14 +90,14 @@ public class main {
 
 
 
-       WhatsAppBot.start();
+      // WhatsAppBot.start();
 
-       while (true) {
+      /* while (true) {
            try {
                TimeUnit.MILLISECONDS.sleep(2000);
            }catch (InterruptedException e) {}
            MessageReceiver.fetchAndSaveMessages();
-       }
+       }*/
 
 
 

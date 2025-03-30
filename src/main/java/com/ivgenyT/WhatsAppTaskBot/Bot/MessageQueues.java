@@ -1,18 +1,21 @@
 package com.ivgenyT.WhatsAppTaskBot.Bot;
 
 import com.ivgenyT.WhatsAppTaskBot.StorageManager.MessageForm;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class MessageQueues {
-private static List<MessageForm> receivedMessageQueue = new ArrayList<MessageForm>();
-private static List<MessageForm> sendMessageQueue = new ArrayList<>();
+private static  LinkedList<MessageForm> receivedMessageQueue = new LinkedList<>();
+private static  LinkedList<MessageForm> sendMessageQueue = new LinkedList<>();
 
 
 
 //no constructor - all methods are statics
 //static methods
+
   public static void addToReceivedMessageQueue(MessageForm messageForm) {
     receivedMessageQueue.add(messageForm);
   }
@@ -21,16 +24,22 @@ private static List<MessageForm> sendMessageQueue = new ArrayList<>();
     sendMessageQueue.add(messageForm);
   }
 
+  @org.jetbrains.annotations.Nullable
   public static MessageForm PopReceivedMessageQueue() {
       if (!receivedMessageQueue.isEmpty()) {
-          return receivedMessageQueue.getLast();
+          MessageForm lastMessage = receivedMessageQueue.getLast();
+          receivedMessageQueue.removeLast();
+          return lastMessage;
       }
       return null;
   }
 
-  public static MessageForm PopSendMessageQueue() {
+  public static @Nullable MessageForm PopSendMessageQueue() {
       if (!sendMessageQueue.isEmpty()) {
-          return sendMessageQueue.getLast();
+          MessageForm lastMessage = sendMessageQueue.getLast();
+          sendMessageQueue.removeLast();
+          return lastMessage;
+
       }
       return null;
   }
