@@ -34,7 +34,9 @@ public class WhatsAppBot implements Runnable {
     public void printMessage(){
         MessageForm message = MessageQueues.PopReceivedMessageQueue();
         if(message != null){
-            System.out.println("\n"+message.getBody());
+            MessageQueues.addToSendMessageQueue(message);
+            System.out.println("\ninside bot "+message.getBody()+" pushed to queue");
+
         }
 
 
@@ -57,7 +59,7 @@ public class WhatsAppBot implements Runnable {
         _messageSender.sendMessage(number, message);
     }*/
 
-    public static void stop(){
+    public void stop(){
         Twilio.destroy();
     }
 }

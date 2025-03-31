@@ -3,6 +3,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.ivgenyT.WhatsAppTaskBot.Const;
+import com.ivgenyT.WhatsAppTaskBot.MessageSender.Contacts;
 import com.twilio.base.ResourceSet;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.rest.api.v2010.account.MessageReader;
@@ -56,14 +57,17 @@ public class MessageReceiver implements Runnable{
 
         message = iterator.next();
         //check if its a new message by date/time compare
-        if(!(message.getDateUpdated().toString().equals(lastRecivedMessageTime))){
-                //update last message recieved time
-                lastRecivedMessageTime = message.getDateUpdated().toString();
-                //prepare the message in form for message queue
-                MessageForm formedMessage = new MessageForm(message.getBody().toString(), message.getFrom().toString());
-                //add the messasge to queue
-                MessageQueues.addToReceivedMessageQueue(formedMessage);
-
+        if(message != null) {
+            if (!(message.getDateUpdated().toString().equals(lastRecivedMessageTime))) {
+                if (message.getFrom().toString().equals(Contacts.IVGENY.getNumber())) {
+                    //update last message recieved time
+                    lastRecivedMessageTime = message.getDateUpdated().toString();
+                    //prepare the message in form for message queue
+                    MessageForm formedMessage = new MessageForm(message.getBody(), message.getFrom().toString());
+                    //add the messasge to queue
+                    MessageQueues.addToReceivedMessageQueue(formedMessage);
+                }
+            }
         }
 
 

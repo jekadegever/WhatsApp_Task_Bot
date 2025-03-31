@@ -2,6 +2,7 @@ package com.ivgenyT.WhatsAppTaskBot;
 
 import com.ivgenyT.WhatsAppTaskBot.MessageReceiver.MessageReceiver;
 import com.ivgenyT.WhatsAppTaskBot.Bot.WhatsAppBot;
+import com.ivgenyT.WhatsAppTaskBot.MessageSender.MessageSender;
 
 public class main {
 
@@ -10,14 +11,19 @@ public class main {
         WhatsAppBot bot = new WhatsAppBot();
         bot.Init();
         MessageReceiver receiver = new MessageReceiver();
+        MessageSender sender = new MessageSender();
+
+
 
         Thread botThread = new Thread(bot);
         Thread receiverThread = new Thread(receiver);
+        Thread senderThread = new Thread(sender);
 
 
 
         botThread.start();
         receiverThread.start();
+        senderThread.start();
 
 
 
