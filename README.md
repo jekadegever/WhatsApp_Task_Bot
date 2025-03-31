@@ -1,2 +1,2 @@
 # WhatsApp_Task_Bot
-whats app bot usingtwillio service that controlls your daily taksks
+whats app bot using twillio service that controlls your daily taksks
