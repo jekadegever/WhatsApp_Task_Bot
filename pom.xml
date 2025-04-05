@@ -6,6 +6,9 @@
     <groupId>com.ivgenyt</groupId>
     <artifactId>whatsapp-task-bot</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!-- הגדרת repositories -->
     <repositories>
         <repository>
             <id>central</id>
@@ -13,18 +16,55 @@
         </repository>
     </repositories>
 
+    <properties>
+        <!-- הגדרת גרסה של Spring Boot -->
+        <spring.boot.version>2.7.6</spring.boot.version>
+    </properties>
+
     <dependencies>
+        <!-- תלות ב-Spring Boot Starter Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <!-- תלות ב-Spring Boot Starter Logging עם גרסה מתאימה -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <!-- תלות ב-Gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
         </dependency>
 
+        <!-- API של SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+
+        <!-- יישום Logback -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.14</version>
+        </dependency>
+
+        <!-- תלות ב-Twilio SDK -->
         <dependency>
             <groupId>com.twilio.sdk</groupId>
             <artifactId>twilio</artifactId>
             <version>8.28.0</version>
         </dependency>
+
+        <!-- תלות בהערות של JetBrains -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
@@ -32,4 +72,15 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
+    <!-- תוסף למבנה של Spring Boot -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

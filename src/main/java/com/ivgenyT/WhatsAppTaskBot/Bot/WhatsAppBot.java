@@ -4,9 +4,12 @@ package com.ivgenyT.WhatsAppTaskBot.Bot;
 import com.ivgenyT.WhatsAppTaskBot.Const;
 import com.ivgenyT.WhatsAppTaskBot.StorageManager.MessageForm;
 import com.twilio.Twilio;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class WhatsAppBot implements Runnable {
+Logger logger = LoggerFactory.getLogger(WhatsAppBot.class);
 
     private String _authToken;
     private String _accountSid;
@@ -17,6 +20,7 @@ public class WhatsAppBot implements Runnable {
     public WhatsAppBot(){
         _authToken = Const.AUTH_TOKEN;
         _accountSid = Const.ACCOUNT_SID;
+        logger.debug("Created WhatsAppBot");
     }
 
     public void run(){
@@ -34,8 +38,10 @@ public class WhatsAppBot implements Runnable {
     public void printMessage(){
         MessageForm message = MessageQueues.PopReceivedMessageQueue();
         if(message != null){
+            logger.debug("popped from received queue");
             MessageQueues.addToSendMessageQueue(message);
-            System.out.println("\ninside bot "+message.getBody()+" pushed to queue");
+            logger.debug("pushed to send queue");
+
 
         }
 
