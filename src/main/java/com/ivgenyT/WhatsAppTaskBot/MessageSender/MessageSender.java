@@ -34,9 +34,9 @@ public class MessageSender implements Runnable {
             }*/
 
             MessageForm messageToSend = MessageQueues.PopSendMessageQueue();
-            System.out.println(messageToSend == null ? "null" : "not null");
+            //System.out.println(messageToSend == null ? "null" : "not null");
             if (messageToSend != null) {
-                System.out.println("messeage sender "+messageToSend.getBody()+"popped from queue");
+                //System.out.println("messeage sender "+messageToSend.getBody()+"popped from queue");
                 sendMessage(messageToSend.getBody());
                 //sendMessage("hello");
 

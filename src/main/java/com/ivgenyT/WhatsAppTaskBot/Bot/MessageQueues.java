@@ -2,46 +2,52 @@ package com.ivgenyT.WhatsAppTaskBot.Bot;
 
 import com.ivgenyT.WhatsAppTaskBot.StorageManager.MessageForm;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class MessageQueues {
-private static  LinkedList<MessageForm> receivedMessageQueue = new LinkedList<>();
-private static  LinkedList<MessageForm> sendMessageQueue = new LinkedList<>();
+    public static final Logger log = LoggerFactory.getLogger(MessageQueues.class);
+
+//private static  LinkedList<MessageForm> receivedMessageQueue = new LinkedList<>();
+    //private static  LinkedList<MessageForm> sendMessageQueue = new LinkedList<>();
+private static BlockingQueue<MessageForm> recievedMessageQueue = new LinkedBlockingQueue<>();
+private static BlockingQueue<MessageForm> sendMessageQueue = new LinkedBlockingQueue<>();
 
 
 
 //no constructor - all methods are statics
 //static methods
 
-  public static void addToReceivedMessageQueue(MessageForm messageForm) {
-    receivedMessageQueue.add(messageForm);
+  public static void addToReceivedMessageQueue(MessageForm receivedMessage) throws Exception {
+
+      recievedMessageQueue.put(receivedMessage);
+
   }
 
-  public static void addToSendMessageQueue(MessageForm messageForm) {
-    sendMessageQueue.add(messageForm);
+      public static void addToSendMessageQueue(MessageForm messageToSend) throws Exception {
+
+      sendMessageQueue.put(messageToSend);
+
   }
 
-  @org.jetbrains.annotations.Nullable
-  public static MessageForm PopReceivedMessageQueue() {
-      if (!receivedMessageQueue.isEmpty()) {
-          MessageForm lastMessage = receivedMessageQueue.getLast();
-          receivedMessageQueue.removeLast();
-          return lastMessage;
-      }
-      return null;
+
+  public static MessageForm PopReceivedMessageQueue() throws Exception {
+
+      return recievedMessageQueue.take();
   }
 
-  public static @Nullable MessageForm PopSendMessageQueue() {
-      if (!sendMessageQueue.isEmpty()) {
-          MessageForm lastMessage = sendMessageQueue.getLast();
-          sendMessageQueue.removeLast();
-          return lastMessage;
+  public static MessageForm PopSendMessageQueue() throws Exception {
 
-      }
-      return null;
+      return sendMessageQueue.take();
+
   }
 
 }

@@ -9,19 +9,21 @@ import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.rest.api.v2010.account.MessageReader;
 import com.ivgenyT.WhatsAppTaskBot.StorageManager.MessageForm;
 import com.ivgenyT.WhatsAppTaskBot.Bot.*;
-
 import java.util.Iterator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class MessageReceiver implements Runnable{
 
     private final String JSON_FILE = "Tasks.json";
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    //creating messageReader obj
     private  MessageReader reader;
     private ResourceSet<Message> twillioMessageList = null;
      //private List<MessageForm> receivedMessageQueue = new ArrayList<MessageForm>();
     private String lastRecivedMessageTime = "";
+    //Logger logger = LoggerFactory.getLogger(MessageReceiver.class);
+
 
 
 //constructor
@@ -29,10 +31,13 @@ public class MessageReceiver implements Runnable{
     public MessageReceiver() {
         //Create twillio message reader obj
         reader = Message.reader();
+        //logger.debug("message reader obj created");
         //get the last message to update recived time
         getNewMessages();
+        //logger.debug("new messeage fetched for last recive time: " + lastRecivedMessageTime);
         //delete the last message from queue - received time updated
         MessageQueues.PopReceivedMessageQueue();
+        //logger.info("MessageReceiver initialized");
 
 
 
@@ -63,7 +68,7 @@ public class MessageReceiver implements Runnable{
                     //update last message recieved time
                     lastRecivedMessageTime = message.getDateUpdated().toString();
                     //prepare the message in form for message queue
-                    MessageForm formedMessage = new MessageForm(message.getBody(), message.getFrom().toString());
+                    MessageForm formedMessage = new MessageForm(message.getBody(), message.getFrom().toString(), message.getDateSent().toString());
                     //add the messasge to queue
                     MessageQueues.addToReceivedMessageQueue(formedMessage);
                 }
