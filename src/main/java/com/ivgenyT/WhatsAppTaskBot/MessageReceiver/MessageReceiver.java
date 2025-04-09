@@ -68,7 +68,7 @@ public class MessageReceiver implements Runnable{
                     //update last message recieved time
                     lastRecivedMessageTime = message.getDateUpdated().toString();
                     //prepare the message in form for message queue
-                    MessageForm formedMessage = new MessageForm(message.getBody(), message.getFrom().toString());
+                    MessageForm formedMessage = new MessageForm(message.getBody(), message.getFrom().toString(), message.getDateSent().toString());
                     //add the messasge to queue
                     MessageQueues.addToReceivedMessageQueue(formedMessage);
                 }

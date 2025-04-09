@@ -15,7 +15,7 @@
     </appender>
 
     <!-- הגדרת לוגים ברמת INFO -->
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="FILE"/>   <!-- כותב ללוג -->
         <appender-ref ref="CONSOLE"/> <!-- כותב לקונסול -->
     </root>

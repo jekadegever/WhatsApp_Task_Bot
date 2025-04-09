@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76133803-e780-4ef4-a59e-ca1cb3f0b39e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageReceiver/messageReceiverServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/logfile.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/MessageQueues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/MessageQueues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/WhatsAppBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Bot/WhatsAppBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/Const.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageReceiver/MessageReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageReceiver/MessageReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageSender/MessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/MessageSender/MessageSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/StorageManager/MessageForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivgenyT/WhatsAppTaskBot/StorageManager/MessageForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +117,8 @@
       <workItem from="1743331667679" duration="174000" />
       <workItem from="1743331925026" duration="28551000" />
       <workItem from="1743518472154" duration="10046000" />
-      <workItem from="1743786323103" duration="7194000" />
+      <workItem from="1743786323103" duration="12196000" />
+      <workItem from="1743930538639" duration="4617000" />
     </task>
     <servers />
   </component>

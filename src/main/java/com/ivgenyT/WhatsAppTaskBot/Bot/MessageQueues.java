@@ -9,53 +9,45 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class MessageQueues {
-    //public static final Logger LOGGER = LoggerFactory.getLogger(MessageQueues.class);
+    public static final Logger log = LoggerFactory.getLogger(MessageQueues.class);
 
-private static  LinkedList<MessageForm> receivedMessageQueue = new LinkedList<>();
-private static  LinkedList<MessageForm> sendMessageQueue = new LinkedList<>();
-private static BlockingQueue<MessageForm> messageQueueRec = new LinkedBlockingQueue<>();
-private static BlockingQueue<MessageForm> messageQueueSend = new LinkedBlockingQueue<>();
+//private static  LinkedList<MessageForm> receivedMessageQueue = new LinkedList<>();
+    //private static  LinkedList<MessageForm> sendMessageQueue = new LinkedList<>();
+private static BlockingQueue<MessageForm> recievedMessageQueue = new LinkedBlockingQueue<>();
+private static BlockingQueue<MessageForm> sendMessageQueue = new LinkedBlockingQueue<>();
 
 
 
 //no constructor - all methods are statics
 //static methods
 
-  public static void addToReceivedMessageQueue(MessageForm messageForm) {
+  public static void addToReceivedMessageQueue(MessageForm receivedMessage) throws Exception {
 
-      receivedMessageQueue.add(messageForm);
-      //messageQueueRec.add(messageForm);
-  }
-
-  public static void addToSendMessageQueue(MessageForm messageForm) {
-    sendMessageQueue.add(messageForm);
-  }
-
-  @org.jetbrains.annotations.Nullable
-  public static MessageForm PopReceivedMessageQueue() {
-      if (!receivedMessageQueue.isEmpty()) {
-          MessageForm lastMessage = receivedMessageQueue.getLast();
-          receivedMessageQueue.removeLast();
-          //LOGGER.info("Message popped from received queue");
-          return lastMessage;
-      }
-      //LOGGER.info("recived queue is empty");
-      return null;
+      recievedMessageQueue.put(receivedMessage);
 
   }
 
-  public static @Nullable MessageForm PopSendMessageQueue() {
-      if (!sendMessageQueue.isEmpty()) {
-          MessageForm lastMessage = sendMessageQueue.getLast();
-          sendMessageQueue.removeLast();
-          return lastMessage;
+      public static void addToSendMessageQueue(MessageForm messageToSend) throws Exception {
 
-      }
-      return null;
+      sendMessageQueue.put(messageToSend);
+
+  }
+
+
+  public static MessageForm PopReceivedMessageQueue() throws Exception {
+
+      return recievedMessageQueue.take();
+  }
+
+  public static MessageForm PopSendMessageQueue() throws Exception {
+
+      return sendMessageQueue.take();
+
   }
 
 }
